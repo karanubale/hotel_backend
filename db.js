@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
-const mongoURL = 'mongodb://127.0.0.1:27017/hotels'; // Use IPv4 explicitly
+require('dotenv').config();
+
+// const mongoURL = process.env.DB_URL_LOCAL;
+const mongoURL = process.env.DB_URL;
 
 mongoose.connect(mongoURL);
 

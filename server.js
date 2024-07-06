@@ -4,6 +4,9 @@ const db = require('./db');
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
+require('dotenv').config();
+const PORT = process.env.PORT || 3000
+
 const Person = require('./models/Person');
 const MenuItem = require('./models/MenuItem');
 
@@ -18,7 +21,6 @@ app.use('/menu', menuRoutes);
 const personRoutes = require('./routes/personRouts');
 app.use('/person', personRoutes);
 
-
-app.listen(3000, () => {
-    console.log(`server listining on http://localhost/3000`);
+app.listen(PORT, () => {
+    console.log(`server listining on http://localhost/${PORT}`);
 })
