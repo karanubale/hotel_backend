@@ -31,7 +31,7 @@ const menuRoutes = require('./routes/menuRoutes');
 app.use('/menu',menuRoutes);
 
 const personRoutes = require('./routes/personRouts');
-app.use('/person',localAuthMiddleware, personRoutes);
+app.use('/person', personRoutes);
 
 app.listen(PORT, () => {
     console.log(`server listining on http://localhost/${PORT}`);
